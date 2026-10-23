@@ -22,7 +22,7 @@ Bangle.on('pressure', function(e) {
   avr.unshift(e.altitude);
   if (!updateDisplay) return;
   let median = avr.slice().sort(), value;
-  g.reset().clearRect(0,y-30,g.getWidth()-10,R.h);
+  g.reset().clearRect(0,y-30,g.gehttps://www.espruino.com/Bangle.js+App+LoadertWidth()-10,R.h);
   if (median.length>10) {
     var mid = median.length>>1;
     value = E.sum(median.slice(mid-4,mid+5)) / 9;

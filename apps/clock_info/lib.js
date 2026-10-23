@@ -52,7 +52,7 @@ exports.load = function() {
       Bangle.getPressure().then(data=>{
         if (!data) return;
 
-        alt =require("locale").distance(data.altitude);
+        alt =Math.round(data.altitude / 0.3048) + "ft";
         bangleItems.find(i=>i.name=="Altitude").emit("redraw");
       });
     } catch (e) {
