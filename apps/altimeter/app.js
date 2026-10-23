@@ -29,7 +29,8 @@ Bangle.on('pressure', function(e) {
   } else {
     value = median[median.length>>1];
   }
-  var t = fmt(value);
+  //var t = fmt(value); // meters
+  var t = fmt(value / 0.3048); // feet
 
   g.setFont("Vector",50).setFontAlign(0,0).drawString(t, g.getWidth()/2, y);
 
@@ -57,7 +58,7 @@ function start() {
   g.reset();
   g.setFont("Vector:15");
   g.setFontAlign(0,0);
-  g.drawString(/*LANG*/"ALTITUDE (m)", g.getWidth()/2, y-40);
+  g.drawString(/*LANG*/"ALTITUDE (ft)", g.getWidth()/2, y-40);
   g.drawString(/*LANG*/"SEA L (hPa) TEMP (C)", g.getWidth()/2, y+62);
   g.setFont("6x8").setFontAlign(0,0,3).drawString(/*LANG*/"STD", g.getWidth()-5, g.getHeight()/2);
   updateDisplay = true;
